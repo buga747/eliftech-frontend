@@ -9,6 +9,10 @@ import {
   InputContainer,
 } from './UserForm.styled';
 
+require('dotenv').config();
+
+const { CAPTCHA_KEY } = process.env;
+
 const SubmitButton = styled.button`
   padding: 10px 20px;
   background-color: #4285f4;
@@ -67,7 +71,7 @@ const UserForm = ({ handleInputChange, handleSubmit, formData }) => {
             required
           />
         </InputContainer>
-        <ReCAPTCHA sitekey="6Lc7zkUmAAAAANvm_ujvH1vCBpmVR2aWnXXdLhWo" />{' '}
+        <ReCAPTCHA sitekey={CAPTCHA_KEY} />{' '}
         <ButtonContainer>
           <SubmitButton type="submit">Submit</SubmitButton>
         </ButtonContainer>

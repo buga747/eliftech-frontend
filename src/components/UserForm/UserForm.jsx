@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import ReCAPTCHA from 'react-google-recaptcha';
-require('dotenv').config();
-const { CAPTCHA_KEY } = process.env;
 
 import {
   ButtonContainer,
@@ -69,7 +67,7 @@ const UserForm = ({ handleInputChange, handleSubmit, formData }) => {
             required
           />
         </InputContainer>
-        <ReCAPTCHA sitekey="CAPTCHA_KEY" />{' '}
+        <ReCAPTCHA sitekey="6Lc7zkUmAAAAANvm_ujvH1vCBpmVR2aWnXXdLhWo" />{' '}
         <ButtonContainer>
           <SubmitButton type="submit">Submit</SubmitButton>
         </ButtonContainer>

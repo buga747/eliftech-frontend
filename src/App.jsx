@@ -15,6 +15,7 @@ export const App = () => {
   const addToCart = newItem => {
     if (orderedItems.length === 0) {
       setOrderedItems([newItem]);
+      toast.success(`${newItem.title} added to your cart`);
     }
 
     if (orderedItems.length > 0) {
@@ -31,6 +32,7 @@ export const App = () => {
           }
           return item;
         });
+        toast.success(`${newItem.title} added to your cart`);
 
         setOrderedItems(updatedItems);
       }
@@ -39,16 +41,9 @@ export const App = () => {
         toast.error('You can add items from one shop to cart', {
           position: 'top-right',
           autoClose: 3000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: 'light',
         });
       }
     }
-    toast.success(`${newItem.title} added to your cart`);
   };
 
   return (
@@ -69,7 +64,7 @@ export const App = () => {
       }
     >
       <Routes>
-        <Route path="/" element={<SharedLayout />}>
+        <Route path="/" element={<SharedLayout orderedItems={orderedItems} />}>
           <Route index element={<ShopsPage addToCart={addToCart} />} />
           <Route path="/orders" element={<OrderPage items={orderedItems} />} />
         </Route>

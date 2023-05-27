@@ -23,7 +23,6 @@ const CartPage = ({ items }) => {
   const [cartItems, setCartItems] = useState(items);
   const [totalPrice, setTotalPrice] = useState(0);
 
-  // Calculate the total price based on item quantities
   useEffect(() => {
     let total = 0;
     cartItems.forEach(item => {

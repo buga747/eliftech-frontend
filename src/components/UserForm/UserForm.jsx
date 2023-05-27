@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import ReCAPTCHA from 'react-google-recaptcha';
+require('dotenv').config();
+const { CAPTCHA_KEY } = process.env;
 
 import {
   ButtonContainer,
@@ -8,10 +10,6 @@ import {
   FormContainer,
   InputContainer,
 } from './UserForm.styled';
-
-require('dotenv').config();
-
-const { CAPTCHA_KEY } = process.env;
 
 const SubmitButton = styled.button`
   padding: 10px 20px;
@@ -71,7 +69,7 @@ const UserForm = ({ handleInputChange, handleSubmit, formData }) => {
             required
           />
         </InputContainer>
-        <ReCAPTCHA sitekey={CAPTCHA_KEY} />{' '}
+        <ReCAPTCHA sitekey="CAPTCHA_KEY" />{' '}
         <ButtonContainer>
           <SubmitButton type="submit">Submit</SubmitButton>
         </ButtonContainer>

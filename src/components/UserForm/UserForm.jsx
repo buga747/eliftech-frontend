@@ -67,7 +67,7 @@ const UserForm = ({ handleInputChange, handleSubmit, formData }) => {
             required
           />
         </InputContainer>
-        <ReCAPTCHA sitekey="6Ldwt0UmAAAAAGwBtmig7jcTiDoWh4JZNwkcWVlG" />{' '}
+        <ReCAPTCHA sitekey="6Ldwt0UmAAAAAECXTSdFvJHi7ZZ47ZOC2tdudZ71" />{' '}
         <ButtonContainer>
           <SubmitButton type="submit">Submit</SubmitButton>
         </ButtonContainer>

@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import { Container, LoaderContainer, Loader } from './ShopsPage.styled';
+import { Container } from './ShopsPage.styled';
 import { fetchAllShops } from '../../services/shopsApi';
 import ShopsList from '../../components/ShopsList/ShopsList';
 import ProductsList from '../../components/ProductsList/ProductsList';
+import { ThreeCircles } from 'react-loader-spinner';
 
 const ShopsPage = ({ addToCart }) => {
   const [shops, setShops] = useState([]);
@@ -43,9 +44,18 @@ const ShopsPage = ({ addToCart }) => {
     <Container>
       {error && 'Error, please reload the page'}
       {isLoading ? (
-        <LoaderContainer>
-          <Loader>Loading...</Loader>
-        </LoaderContainer>
+        <ThreeCircles
+          height="100"
+          width="100"
+          color="#4fa94d"
+          wrapperStyle={{}}
+          wrapperClass=""
+          visible={true}
+          ariaLabel="three-circles-rotating"
+          outerCircleColor=""
+          innerCircleColor=""
+          middleCircleColor=""
+        />
       ) : (
         <>
           <ShopsList

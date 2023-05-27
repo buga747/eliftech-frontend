@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import { addOrder } from 'services/shopsApi';
-import { Container } from './OrderPage.styled';
+import {
+  Container,
+  DiscoverLink,
+  EmptyCartWrapper,
+  Title,
+} from './OrderPage.styled';
 import UserForm from '../../components/UserForm/UserForm';
 import OrderedList from '../../components/OrderedList/OrderedList';
 
@@ -115,9 +120,11 @@ const CartPage = ({ items }) => {
           />
         </>
       ) : (
-        <div>
-          <p>Add more items to the cart</p>
-        </div>
+        <EmptyCartWrapper>
+          <Title>Add more items to the cart</Title>
+
+          <DiscoverLink to="/">Back to Shop</DiscoverLink>
+        </EmptyCartWrapper>
       )}
     </Container>
   );

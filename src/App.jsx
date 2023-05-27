@@ -21,6 +21,7 @@ export const App = () => {
     if (orderedItems.length > 0) {
       if (orderedItems[0].shopId === newItem.shopId) {
         setOrderedItems(prev => [...prev, newItem]);
+        toast.success(`${newItem.title} added to your cart`);
       }
 
       const itemInCart = orderedItems.find(item => item._id === newItem._id);

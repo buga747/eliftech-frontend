@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/eliftech-frontend/static/css/main.86bee891.css",
-    "main.js": "/eliftech-frontend/static/js/main.8b7a6441.js",
-    "static/js/674.bdaeb558.chunk.js": "/eliftech-frontend/static/js/674.bdaeb558.chunk.js",
-    "static/js/89.2a44aafd.chunk.js": "/eliftech-frontend/static/js/89.2a44aafd.chunk.js",
+    "main.js": "/eliftech-frontend/static/js/main.16400d13.js",
+    "static/js/674.d5c28ab1.chunk.js": "/eliftech-frontend/static/js/674.d5c28ab1.chunk.js",
+    "static/js/89.7256a936.chunk.js": "/eliftech-frontend/static/js/89.7256a936.chunk.js",
     "static/js/279.44b72abd.chunk.js": "/eliftech-frontend/static/js/279.44b72abd.chunk.js",
     "static/js/53.8b4fff26.chunk.js": "/eliftech-frontend/static/js/53.8b4fff26.chunk.js",
     "static/media/NoImagePlaceholder.png": "/eliftech-frontend/static/media/NoImagePlaceholder.ebbc7b17947644e301a0.png",
     "index.html": "/eliftech-frontend/index.html",
     "main.86bee891.css.map": "/eliftech-frontend/static/css/main.86bee891.css.map",
-    "main.8b7a6441.js.map": "/eliftech-frontend/static/js/main.8b7a6441.js.map",
-    "674.bdaeb558.chunk.js.map": "/eliftech-frontend/static/js/674.bdaeb558.chunk.js.map",
-    "89.2a44aafd.chunk.js.map": "/eliftech-frontend/static/js/89.2a44aafd.chunk.js.map",
+    "main.16400d13.js.map": "/eliftech-frontend/static/js/main.16400d13.js.map",
+    "674.d5c28ab1.chunk.js.map": "/eliftech-frontend/static/js/674.d5c28ab1.chunk.js.map",
+    "89.7256a936.chunk.js.map": "/eliftech-frontend/static/js/89.7256a936.chunk.js.map",
     "279.44b72abd.chunk.js.map": "/eliftech-frontend/static/js/279.44b72abd.chunk.js.map",
     "53.8b4fff26.chunk.js.map": "/eliftech-frontend/static/js/53.8b4fff26.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.86bee891.css",
-    "static/js/main.8b7a6441.js"
+    "static/js/main.16400d13.js"
   ]
 }

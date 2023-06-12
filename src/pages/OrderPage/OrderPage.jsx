@@ -27,6 +27,7 @@ const OrderPage = ({ items, handleDeleteItem }) => {
 
   const [cartItems, setCartItems] = useState(items);
   const [totalPrice, setTotalPrice] = useState(0);
+  const [captchaPassed, setCaptchaPassed] = useState(false); // New state for reCAPTCHA validation
 
   useEffect(() => {
     setCartItems(items);
@@ -66,6 +67,12 @@ const OrderPage = ({ items, handleDeleteItem }) => {
   const handleSubmit = async e => {
     e.preventDefault();
 
+    if (!captchaPassed) {
+      console.log('Please complete the reCAPTCHA!');
+      // Handle the case when reCAPTCHA is not passed
+      return;
+    }
+
     const data = {
       user: {
         name: formData.name,
@@ -96,6 +103,7 @@ const OrderPage = ({ items, handleDeleteItem }) => {
         address: '',
       });
       setCartItems([]);
+      setCaptchaPassed(false); // Reset the reCAPTCHA validation
     } catch (error) {
       console.error(error.message);
       toast.error('Something wrong. Please try again later');
@@ -110,6 +118,7 @@ const OrderPage = ({ items, handleDeleteItem }) => {
             handleInputChange={handleInputChange}
             handleSubmit={handleSubmit}
             formData={formData}
+            setCaptchaPassed={setCaptchaPassed} // Pass setCaptchaPassed to UserForm
           />
           <OrderedList
             cartItems={cartItems}

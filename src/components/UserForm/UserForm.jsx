@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import ReCAPTCHA from 'react-google-recaptcha';
 
@@ -23,7 +23,30 @@ const SubmitButton = styled.button`
   }
 `;
 
-const UserForm = ({ handleInputChange, handleSubmit, formData }) => {
+const UserForm = ({ handleInputChange, formData }) => {
+  const [captchaPassed, setCaptchaPassed] = useState(false);
+
+  const handleSubmit = event => {
+    event.preventDefault();
+
+    if (captchaPassed) {
+      // Perform form submission
+      console.log('Form submitted!');
+      // Add your logic to handle form submission here
+    } else {
+      console.log('Please complete the reCAPTCHA!');
+      // Add your logic to handle the case when reCAPTCHA is not passed
+    }
+  };
+
+  const handleCaptchaChange = value => {
+    if (value) {
+      setCaptchaPassed(true);
+    } else {
+      setCaptchaPassed(false);
+    }
+  };
+
   return (
     <FormContainer>
       <Form onSubmit={handleSubmit}>
@@ -67,7 +90,10 @@ const UserForm = ({ handleInputChange, handleSubmit, formData }) => {
             required
           />
         </InputContainer>
-        <ReCAPTCHA sitekey="6Lc7zkUmAAAAANvm_ujvH1vCBpmVR2aWnXXdLhWo" />{' '}
+        <ReCAPTCHA
+          sitekey="6Lc7zkUmAAAAANvm_ujvH1vCBpmVR2aWnXXdLhWo"
+          onChange={handleCaptchaChange}
+        />
         <ButtonContainer>
           <SubmitButton type="submit">Submit</SubmitButton>
         </ButtonContainer>
